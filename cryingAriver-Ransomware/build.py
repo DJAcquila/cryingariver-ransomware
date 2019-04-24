@@ -28,3 +28,8 @@ def build(prog):
 def main():
 	decryptor = build('decryptor')
 	daemon = build('daemon')
+	
+	print ("Decryptor:\n {}".format(decryptor))
+	print ("Daemon:\n {}".format(daemon))
+
+
