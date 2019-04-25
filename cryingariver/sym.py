@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # _*_coding: UTF-8
 
 import base64, hashlib
